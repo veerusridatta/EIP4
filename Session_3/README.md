@@ -8,41 +8,57 @@ Model Definition:
 model = Sequential()
 
 model.add(SeparableConv2D(48, 3, 3, border_mode='same', input_shape=(32, 32, 3))) # 32x32x48, 3
+
 model.add(BatchNormalization()) 
+
 model.add(Activation('relu')) 
 
 model.add(SeparableConv2D(48, 3, 3)) # 30x30x48, 5
+
 model.add(BatchNormalization())
+
 model.add(Activation('relu'))
 
 model.add(MaxPooling2D(pool_size=(2, 2))) # 15x15x48, 7
+
 model.add(Dropout(0.1))
 
 model.add(SeparableConv2D(96, 3, 3, border_mode='same')) # 15x15x96, 15
+
 model.add(BatchNormalization())
+
 model.add(Activation('relu'))
 
 model.add(SeparableConv2D(96, 3, 3)) # 13x13x96, 23
+
 model.add(BatchNormalization())
+
 model.add(Activation('relu'))
 
 model.add(MaxPooling2D(pool_size=(2, 2))) # 6x6x96, 27
+
 model.add(Dropout(0.1))
 
 model.add(SeparableConv2D(192, 3, 3, border_mode='same')) # 6x6x192 , 44
+
 model.add(BatchNormalization())
+
 model.add(Activation('relu'))
 
 model.add(SeparableConv2D(192, 3, 3)) # 4x4x192 , 60
+
 model.add(BatchNormalization())
+
 model.add(Activation('relu'))
 
 model.add(MaxPooling2D(pool_size=(2, 2))) # 2x2x192, 68
+
 model.add(Dropout(0.1))
 
 model.add(SeparableConv2D(num_classes, 4, border_mode='same')) # 2x2x10, 100
 
 model.add(GlobalAveragePooling2D())
+
 model.add(Activation('softmax')) 
 
 # Compile the model
