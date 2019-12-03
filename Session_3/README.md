@@ -1,6 +1,6 @@
 Base Model Test Score: 0.8248 Total params: 1,172,410
 
-Best Model Test Score: 0.8325, Total params: 84,27
+Best Model Test Score: 0.8325, Total params: 84,277
 
 
 Model Definition:
